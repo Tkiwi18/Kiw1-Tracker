@@ -109,3 +109,17 @@ h1 {
 .tracker-item.collected {
     opacity: 0;
 }
+#filter-container {
+    margin: 10px auto;
+    text-align: center;
+}
+
+#filter-input {
+    padding: 8px 12px;
+    width: 50%;
+    font-size: 1em;
+    border: 2px solid lightblue;
+    border-radius: 5px;
+    background-color: black;
+    color: white;
+}

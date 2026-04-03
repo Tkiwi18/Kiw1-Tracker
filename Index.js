@@ -209,3 +209,36 @@ document.querySelectorAll(".tracker-item").forEach(button => {
         button.classList.toggle("collected");
     });
 });
+function filterTracker() {
+    const query = document.getElementById("filter-input").value.toLowerCase();
+
+    document.querySelectorAll(".selection").forEach(section => {
+        const sectionHeader = section.previousElementSibling;
+        const headerText = sectionHeader.textContent.toLowerCase();
+
+        const sectionMatches = headerText.includes(query);
+
+        let anyItemMatches = false;
+
+        section.querySelectorAll(".item").forEach(item => {
+            const text = item.querySelector("span").textContent.toLowerCase();
+
+            if (sectionMatches) {
+                item.style.display = "";
+            } else if (text.includes(query)) {
+                item.style.display = "";
+                anyItemMatches = true;
+            } else {
+                item.style.display = "none";
+            }
+        });
+
+        if (sectionMatches || anyItemMatches) {
+            sectionHeader.style.display = "";
+            section.style.display = "";
+        } else {
+            sectionHeader.style.display = "none";
+            section.style.display = "none";
+        }
+    });
+}
