@@ -1,0 +1,65 @@
+body {
+    background-color: black;
+}
+
+.titel {
+    color: red;
+    text-align: center;
+    Font-size: 2.5em;
+}
+
+h1 {
+    color: white;
+    font-size: 1.3em;
+    font-weight: bolder;
+}
+
+.item {
+    color: white;
+    font-size: 1em;
+    line-height: 0.3em;
+}
+
+.note {
+    opacity: 90%;
+    background-color: lightblue;
+}
+
+.skip {
+    opacity: 90%;
+    background-color: lightblue;
+    border-color: lightblue;
+
+}
+
+.selection {
+    background-color: black;
+    border-color: white;
+    border-style: solid;
+    border-width: 0.3em;
+    width: 40em;
+}
+
+.collected {
+    color: greenyellow;
+}
+
+.skipped {
+    color: gray;
+}
+
+.skip-label {
+    color: gray;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+#total-counter {
+    font-size: 1em;
+    margin: 10px 0;
+    font-weight: bold;
+    color: white;
+}
+.collected{
+    background-color: black;
+    border-color: black;
+}
