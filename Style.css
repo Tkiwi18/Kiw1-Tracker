@@ -63,3 +63,49 @@ h1 {
     background-color: black;
     border-color: black;
 }
+.oot{
+    color:white;
+    font-weight: 900;
+    font-size: 2em;
+}
+
+#tracker-container {
+    display: flex;
+}
+
+
+#main-tracker {
+    flex: 1; 
+    min-width: 40em; 
+    padding: 20px;
+}
+
+#item-tracker-wrapper {
+    position: fixed;       
+    top: 20px;            
+    right: 20px;           
+    width: 200px;          
+    background-color: black; 
+    padding: 10px;
+    border: 2px solid white;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+#item-tracker {
+    display: flex;
+    flex-direction: column; 
+    gap: 10px;
+}
+
+.tracker-item {
+    opacity: 0.5;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.tracker-item.collected {
+    opacity: 0;
+}

@@ -139,7 +139,7 @@ function downloadTracker() {
                         : "none";
 
             trackerData[sectionId].push({
-                name: text.textContent.replace(/\s*\(skipped\)/, ""), // remove skipped label
+                name: text.textContent.replace(/\s*\(skipped\)/, ""),
                 state: state,
                 note: note
             });
@@ -147,9 +147,13 @@ function downloadTracker() {
     });
 
     const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(trackerData, null, 2));
+
+    const now = new Date();
+    const dateStr = now.toISOString().split('T')[0];
+
     const downloadAnchor = document.createElement("a");
     downloadAnchor.setAttribute("href", dataStr);
-    downloadAnchor.setAttribute("download", "tracker.json");
+    downloadAnchor.setAttribute("download", `Kiw1-Tracker-${dateStr}.json`);
     document.body.appendChild(downloadAnchor);
     downloadAnchor.click();
     downloadAnchor.remove();
@@ -200,3 +204,8 @@ function uploadTracker(event) {
 
     reader.readAsText(file);
 }
+document.querySelectorAll(".tracker-item").forEach(button => {
+    button.addEventListener("click", () => {
+        button.classList.toggle("collected");
+    });
+});

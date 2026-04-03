@@ -11,15 +11,17 @@
 </head>
 
 <body>
-<div class="titel">Kiw1 Tracker</div>
-<div class="tracker-controls">
-    <button onclick="downloadTracker()">Download Tracker</button>
-    <input type="file" id="uploadFile" onchange="uploadTracker(event)" accept=".json">
-</div>
-<div id="total-counter">(0/0)</div>
+    <div class="titel">Kiw1 Tracker</div>
+    <div class="tracker-controls">
+        <button onclick="downloadTracker()">Download Tracker</button>
+        <input type="file" id="uploadFile" onchange="uploadTracker(event)" accept=".json">
+    </div>
+    <div id="total-counter">(0/0)</div>
 
+<div id="tracker-container">
+    <div id="main-tracker">
 
-
+    <div class="oot"> OOT </div>
     <!----------------------------------------------------------------------
 Kokiri Forest
 ----------------------------------------------------------------------->
@@ -660,7 +662,7 @@ Outside Hyrule Castle
     </div>
 
 
-        <!----------------------------------------------------------------------
+    <!----------------------------------------------------------------------
 Outside Ganon's Castle
 ----------------------------------------------------------------------->
 
@@ -687,7 +689,7 @@ Outside Ganon's Castle
         </div>
     </div>
 
-          <!----------------------------------------------------------------------
+    <!----------------------------------------------------------------------
 Kakariko Village
 ----------------------------------------------------------------------->
     <h1>
@@ -810,6 +812,12 @@ Kakariko Village
         </div>
         <div class="item">
             <span>Anju as Adult</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Song From Sheik</span>
             <button class="collected" onclick="toggleCollected(this)">Collected</button>
             <button class="skip" onclick="toggleSkip(this)">X</button>
             <input type="text" placeholder="Note..." class="note">
@@ -942,7 +950,7 @@ Kakariko Village
         </div>
     </div>
 
-        <!----------------------------------------------------------------------
+    <!----------------------------------------------------------------------
 Graveyard
 ----------------------------------------------------------------------->
 
@@ -1016,7 +1024,7 @@ Graveyard
         </div>
     </div>
 
-            <!----------------------------------------------------------------------
+    <!----------------------------------------------------------------------
 Death Mountain Trail
 ----------------------------------------------------------------------->
 
@@ -1097,19 +1105,19 @@ Death Mountain Trail
         </div>
     </div>
 
-               <!----------------------------------------------------------------------
-Goron City (OoT)
+    <!----------------------------------------------------------------------
+Goron City
 ----------------------------------------------------------------------->
 
 
     <h1>
-        <button onclick="toggleSection('goron-city-oot', this)">▼</button>
-        Goron City (OoT)
-        <span class="counter" id="counter-goron-city-oot"></span>
+        <button onclick="toggleSection('goron-city', this)">▼</button>
+        Goron City
+        <span class="counter" id="counter-goron-city"></span>
 
     </h1>
 
-    <div class="selection" id="goron-city-oot">
+    <div class="selection" id="goron-city">
         <div class="item">
             <span>Rolling Goron as Child</span>
             <button class="collected" onclick="toggleCollected(this)">Collected</button>
@@ -1182,7 +1190,7 @@ Goron City (OoT)
             <button class="skip" onclick="toggleSkip(this)">X</button>
             <input type="text" placeholder="Note..." class="note">
         </div>
-                <div class="item">
+        <div class="item">
             <span>Shop Item 6</span>
             <button class="collected" onclick="toggleCollected(this)">Collected</button>
             <button class="skip" onclick="toggleSkip(this)">X</button>
@@ -1232,7 +1240,7 @@ Goron City (OoT)
         </div>
     </div>
 
-                   <!----------------------------------------------------------------------
+    <!----------------------------------------------------------------------
 Death Mountain Crater
 ----------------------------------------------------------------------->
 
@@ -1312,4 +1320,786 @@ Death Mountain Crater
             <input type="text" placeholder="Note..." class="note">
         </div>
     </div>
+
+    <!----------------------------------------------------------------------
+Lon Lon Ranch
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('lon-lon-ranch', this)">▼</button>
+        Lon Lon Ranch
+        <span class="counter" id="counter-lon-lon-ranch"></span>
+
+    </h1>
+
+    <div class="selection" id="lon-lon-ranch">
+        <div class="item">
+            <span>Song From Malon</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Talon's Minigame</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Tower Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Right</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Middle</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Left</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Window GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Tree GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shed GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Wall GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+    <!----------------------------------------------------------------------
+Zora's River
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('zoras-river', this)">▼</button>
+        Zora's River
+        <span class="counter" id="counter-zoras-river"></span>
+
+    </h1>
+
+    <div class="selection" id="zoras-river">
+        <div class="item">
+            <span>Buy Beans From Bean Man</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Freestanding Item Near Grotto's</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Open Grotto Chest</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Freestanding Item Near Domain</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grotto Front</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grotto Rear</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Frogs Play Zelda's Lullaby</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Frogs Play Epona's Song</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Frogs Play Saria's Song</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Frogs Play Song of Time</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Frogs Play Sun's Song</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+
+        <div class="item">
+            <span>Frogs In The Rain</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Frogs Melody Game</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Tree GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Ladder GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Near Grotto's GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bridge GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+
+    <!----------------------------------------------------------------------
+Zora's Domain
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('zoras-domain', this)">▼</button>
+        Zora's Domain
+        <span class="counter" id="counter-zoras-domain"></span>
+
+    </h1>
+
+    <div class="selection" id="zoras-domain">
+        <div class="item">
+            <span>Diving Minigame</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Torch Chest</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>King zora Thawed</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>King Zora Trade Prescription</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 1</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 2</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 3</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 4</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 5</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 6</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 7</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shop Item 8</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+    <!----------------------------------------------------------------------
+Zora's Fountain
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('zoras-fountain', this)">▼</button>
+        Zora's Fountain
+        <span class="counter" id="counter-zoras-fountain"></span>
+
+    </h1>
+
+    <div class="selection" id="zoras-fountain">
+        <div class="item">
+            <span>Bottom Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Ice Platform Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Great Fairy</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Secret Cave GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Tree GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Log GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+    <!----------------------------------------------------------------------
+Lake Hylia
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('lake-hylia', this)">▼</button>
+        Lake Hylia
+        <span class="counter" id="counter-lake-hylia"></span>
+
+    </h1>
+
+    <div class="selection" id="lake-hylia">
+        <div class="item">
+            <span>Child Fishing</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Adult Fishing</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Lab Dive</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Trade Eyeball Frog</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Freestanding Dive Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Lab Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Shoot The Sun</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grave Right</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grave Middle</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grave Left</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Sun Reward Island GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Lab Wall GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Lab Crate GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Top of Tree GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Soil Patch GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+    <!----------------------------------------------------------------------
+Gerudo Valley
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('gerudo-valley', this)">▼</button>
+        Gerudo Valley
+        <span class="counter" id="counter-gerudo-valley"></span>
+
+    </h1>
+
+    <div class="selection" id="gerudo-valley">
+        <div class="item">
+            <span>Crate Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Waterfall Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Trade Poacher Saw</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Chest</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grotto Front</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bussiness Scrub Grotto Rear</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Bridge GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Behind Tent GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Pillar GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Soil Patch GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+    <!----------------------------------------------------------------------
+Gerudo Fortress
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('gerudos-fortress', this)">▼</button>
+        Gerudo's Fortress
+        <span class="counter" id="counter-gerudos-fortress"></span>
+
+    </h1>
+
+    <div class="selection" id="gerudos-fortress">
+        <div class="item">
+            <span>Carpenter Guard 1</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Carpenter Guard 2</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Carpenter Guard 3</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Carpenter Guard 4</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Free All Carpenters</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Chest</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Horseback Archery 1000 Points</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Horseback Archery 1500 Points</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Fortress GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Target GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+    <!----------------------------------------------------------------------
+Haunted Wasteland
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('haunted-wasteland', this)">▼</button>
+        Haunted Wasteland
+        <span class="counter" id="counter-haunted-wasteland"></span>
+
+    </h1>
+
+    <div class="selection" id="haunted-wasteland">
+        <div class="item">
+            <span>Buy Flying Merchant Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Torches Chest</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+    <!----------------------------------------------------------------------
+Desert Colossus
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('desert-colossus', this)">▼</button>
+        Desert Colossus
+        <span class="counter" id="counter-desert-colossus"></span>
+
+    </h1>
+
+    <div class="selection" id="desert-colossus">
+        <div class="item">
+            <span>Song From Sheik</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Front</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Rear</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Great Fairy</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Tree GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Hill GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Soil Patch GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+        <!----------------------------------------------------------------------
+Desert Colossus
+----------------------------------------------------------------------->
+
+
+    <h1>
+        <button onclick="toggleSection('deku-tree', this)">▼</button>
+        Deku Tree
+        <span class="counter" id="counter-deku-tree"></span>
+
+    </h1>
+
+    <div class="selection" id="deku-tree">
+        <div class="item">
+            <span>Song From Sheik</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Front</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Business Scrub Grotto Rear</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Great Fairy</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Freestanding Item</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Tree GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Hill GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+        <div class="item">
+            <span>Soil Patch GS</span>
+            <button class="collected" onclick="toggleCollected(this)">Collected</button>
+            <button class="skip" onclick="toggleSkip(this)">X</button>
+            <input type="text" placeholder="Note..." class="note">
+        </div>
+    </div>
+
+
+
+
+
+</div>
+
+
+    <!----------------------------------------------------------------------
+Item Tracker
+----------------------------------------------------------------------->
+<div id="item-tracker-wrapper">
+        <h2>Custom Item Tracker</h2>
+        <div id="item-tracker">
+            <button class="tracker-item" data-item="fairy-bow">Fairy Bow</button>
+            <button class="tracker-item" data-item="hookshot">Hookshot</button>
+            <button class="tracker-item" data-item="boomerang">Boomerang</button>
+            <button class="tracker-item" data-item="bombs">Bombs</button>
+        </div>
+    </div>
+</div>
+
+
+
 </body>
