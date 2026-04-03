@@ -10,10 +10,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function toggleSection(sectionId, button) {
     const section = document.getElementById(sectionId);
+    const header = button.parentElement;
 
     if (section.style.display === "none") {
         section.style.display = "block";
         button.textContent = "▼";
+
+        header.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+        });
+
     } else {
         section.style.display = "none";
         button.textContent = "►";
